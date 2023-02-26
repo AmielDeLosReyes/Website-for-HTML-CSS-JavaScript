@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 2 - A1</title>
+    <link rel="stylesheet" href="../homepage.css" />
+    <link rel="stylesheet" href="pageDesign.css" />
+    <style>
+        .mainHeader {
+            overflow: hidden;
+            background-color: #f1f1f1;
+            padding: 20px 10px;
+        }
+
+        .mainHeader a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px; 
+            line-height: 25px;
+            border-radius: 4px;
+        }
+
+        #aboutMe {
+            text-align: center;
+        }
+
+        .mainHeader a.logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .mainHeader a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .mainHeader a.active {
+            background-color: dodgerblue;
+            color: white;
+        }
+
+        .mainHeader-right {
+            float: right;
+        }
+
+        @media screen and (max-width: 500px) {
+            .mainHeader a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+            
+            .mainHeader-right {
+                float: none;
+            }
+        }
+
+        .question{
+            font-weight: 600;
+        }
+        .answers {
+            margin-bottom: 20px;
+        }
+        #submit{
+            font-family: sans-serif;
+            font-size: 17px;
+            background-color: darkblue;
+            color: #fff;
+            border: 0px;
+            border-radius: 3px;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        #submit:hover{
+            background-color: blue;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <div class="mainHeader">
+        <a href="index.html" class="logo">Amiel De Los Reyes' Page</a>
+        <div class="mainHeader-right">
+          <a href="../index.html">Home</a>
+          <a href="../Part1">Part 1</a>
+          <a class="active" href="#">Part 2</a>
+          <a href="../Part3">Part 3</a>
+          <a href="../Part4">Part 4</a>
+        </div>
+    </div>
+
+    
+    <div class="header">
+        <table>
+            <tr>
+            <td>
+            <img src="images/logo.png" alt="logo" height="80px" width="100px"/></td>
+            <td>
+            <h2>&nbsp;CodeTeacher - A Teaching Website to Learn HTML/CSS/JavaScript</h2></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- navigation bar -->
+    <div class="nav">
+        <ul class="horizontal">
+            <li>
+                <a href="index.html">Welcome Page</a>
+            </li>
+            <li>
+                <a href="unit1.html">Unit 1 (HTML/CSS)</a>
+            </li>
+            <li>
+                <a class="active" href="unit2.html">Unit 2 (JavaScript)</a>
+            </li>
+            <li>
+                <a href="unit3.html">Unit 3 (XML/AJAX)</a>
+            </li>
+          
+        </ul>
+    </div>
+
+
+    <div class="section">
+        <h2>Basic Fundamentals of JavaScript</h2>
+
+        <div class="article">
+            <p>JavaScript was invented by Brandan Eich in 1995. It was created in Netscape Communications and was designed as a scripting language for the company's flagship, web browser, and Netscape Navigator.</p> 
+            <!-- Ref: https://launchschool.com/books/javascript/read/introduction -->
+        </div>
+    </div>
+    
+    <div class="section" id="me">
+        <h2>JavaScript:</h2>
+
+        <div class="article">
+
+        <ul>
+            Unlike HTML and CSS, JavaScript is a programming language that's used to design webpage behaviour. It handles click events, forms inputs, and other logical functionalities. It helps create an dynamic webpage and makes a website user-friendly.
+            
+        </ul>
+        </div>
+    </div>
+
+    <div class="section" id="me">
+        <h2>JavaScript Fundamentals:</h2>
+
+        <div class="article">
+
+        <ul>
+            <li>One of the most basic JavaScript method is the writeln method. This method writes a line of HTML5 text in the HTML5 document.</li>
+            <br />
+
+            <li>JavaScript also have alert features. It can be used when trying to signal an error or any kind of invalid inputs. The syntax for that is: window.alert("string");.</li>
+
+            <br />
+            <li>One of the most used method in JavaScript is the .getElementById() method. It grabs an HTML element with the Id specified and we can do other methods on it such as: .innerHTML, .style, and more.</li>
+            <br />
+
+            <li>There are also String methods that works with strings such as: .length, .substring(), .replace, .toUpperCase(), .concat(), and more. These are important methods when it comes to grabbing String data and also validating them.</li>
+            <br />
+
+            <li>JavaScript also uses control statements and iterative methods. These are for loops, while loops, do-while loop, if statements, if-else statements, and more. Their main purpose is to provide logic and for evaluations.</li>
+            <br />
+
+            <li>JavaScript also allows any Mathematical calculations, either for display or for logic. Some of these methods are math.random, math.floor, math.round, and more.</li>
+
+        </ul>
+        </div>
+    </div>
+
+    <div class="section" id="me">
+        <h2>JavaScript Arrays:</h2>
+
+        <div class="article">
+
+        <ul>
+            <li>An array consists of a list of values put into a variable. The correct syntax for it is: <i>const arrayName = [item1, item2, ...]; </i>. Arrays are useful and convenient since it prevents you from writing variables one by one. Instead, we use arrays and iterate through it to either display, find, delete, or add elements/items inside it. </li>
+            <br />
+        </ul>
+        </div>
+    </div>
+
+    <div class="section" id="me">
+        <h2>JavaScript Functions:</h2>
+
+        <div class="article">
+
+        <ul>
+            <li>JavaScript allows the creation of functions. The basic syntax for creating a function is: <i>function functionName(param1, param2) { ... }
+            </i>. This allows the programmers to create any function that performs any kind of action or method or calculations.</li>
+            <br />
+        </ul>
+        </div>
+    </div>
+
+    <div class="section" id="me">
+        <h2>JavaScript Event Handlers:</h2>
+
+        <div class="article">
+
+        <ul>
+            <li>JavaScript has event handlers that handle certain events that happens to any HTML element. The basic syntax for it is: <i>document.addEventListener("click", function;</i>. The first parameter can include values such as mouseover, focus, keypress, submit, and many more.</li>
+            <br />
+        </ul>
+        </div>
+    </div>
+
+    <!-- Code for the quiz -->
+    <div class="section" id="classes">
+        <h2>Take the quiz:</h2>
+
+        <div class="article">
+            <div id="quiz"></div>
+            <button id="submit">Get Results</button>
+            <div id="results"></div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript code for quiz. Reference code: https://codepen.io/yaphi1/pen/NpZvJp . This code helped me creating a simple JS quiz.-->
+    <script>
+        // Create a JSON object that contains the questions and the answers
+        var myQuestions = [
+            {
+                question: "What does the writeln method do?",
+                answers: {
+                    a: 'Draws a line on the website.',
+                    b: 'Writes a line of HTML5 text on the HTML5 document.',
+                    c: 'Creates a box on the website.',
+                    d: 'Writes a solid black line in the browser.'
+                },
+                correctAnswer: 'b'
+            },
+            {
+                question: "What does window.alert() do?",
+                answers: {
+                    a: 'Creates an alert sound for the website.',
+                    b: 'Does an emphasis animation on all of the HTML texts.',
+                    c: 'Signals/alerts the user with a "pop-up" window.',
+                    d: 'Closes the browser.'
+                },
+                correctAnswer: 'c'
+            },
+            {
+                question: "What is an onclick event?",
+                answers: {
+                    a: 'Event occurs when you hover over an HTML element.',
+                    b: 'Event occurs when you click on an HTML element.',
+                    c: 'Event occurs when you right-click on an HTML element.',
+                    d: 'Event occurs when you highlight on an HTML element'
+                },
+                correctAnswer: 'b'
+            },
+            {
+                question: "Which JavaScript event is NOT mouse-related?",
+                answers: {
+                    a: 'keyup',
+                    b: 'onclick',
+                    c: 'onmouseup',
+                    d: 'oncontextmenu'
+                },
+                correctAnswer: 'a'
+            },
+            {
+                question: "Which JavaScript event is NOT keyboard-related?",
+                answers: {
+                    a: 'onkeydown',
+                    b: 'onclick',
+                    c: 'onkeypress',
+                    d: 'onkeyup'
+                },
+                correctAnswer: 'b'
+            }
+        ];
+
+        // Work variables
+        var quizContainer = document.getElementById('quiz');
+        var resultsContainer = document.getElementById('results');
+        var submitButton = document.getElementById('submit');
+
+        // Call the generateQuiz function
+        generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+        // generateQuiz function code
+        function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+            function showQuestions(questions, quizContainer){
+                // we'll need a place to store the output and the answer choices
+                var output = [];
+                var answers;
+
+                // iterate through every question, for each question.
+                for(var i = 0; i < questions.length; i++){
+                    
+                    // initialize list of answers
+                    answers = [];
+
+                    // grab the letter from the answers
+                    for(letter in questions[i].answers){
+
+                        // add answer choices as radio buttons
+                        answers.push(
+                            '<label>'
+                                + '<input type="radio" name="question'+ i + '" value="' + letter + '">'
+                                + letter + ': '
+                                + questions[i].answers[letter]
+                            + '</label><br/>'
+                        );
+                    }
+
+                    // add this question and its answers to the output
+                    output.push(
+                        '<div class="question">' + questions[i].question + '</div>'
+                        + '<div class="answers">' + answers.join('') + '</div>'
+                    );
+                }
+
+                // finally combine our output list into one string of html and put it on the page
+                quizContainer.innerHTML = output.join('');
+            }
+
+
+            function showResults(questions, quizContainer, resultsContainer){
+                
+                // gather answer containers from our quiz
+                var answerContainers = quizContainer.querySelectorAll('.answers');
+                
+                // keep track of user's answers
+                var userAnswer = '';
+                var numCorrect = 0;
+                
+                // for each question...
+                for(var i = 0; i < questions.length; i++){
+
+                    // find selected answer
+                    userAnswer = (answerContainers[i].querySelector('input[name=question' + i + ']:checked')||{}).value;
+                    
+                    // if answer is correct
+                    if(userAnswer === questions[i].correctAnswer){
+                        // add to the number of correct answers
+                        numCorrect++;
+                        
+                        // color the answers green
+                        answerContainers[i].style.color = 'green';
+                    }
+                    // if answer is wrong or blank
+                    else{
+                        // color the answers red
+                        answerContainers[i].style.color = 'red';
+                    }
+                }
+
+                // show number of correct answers out of total
+                resultsContainer.innerHTML = "<b>Your Result: " + numCorrect + ' out of ' + questions.length + " (" + ((numCorrect/questions.length) * 100) + "%)" + ". You can change your answer on your mistakes and keep trying until you get the correct answer!</b>";
+            }
+
+            // show questions right away
+            showQuestions(questions, quizContainer);
+            
+            // on submit, show results
+            submitButton.onclick = function(){
+                showResults(questions, quizContainer, resultsContainer);
+            }
+
+        }
+    </script>
+
+    
+    <div class="aside" id="like">
+        <h2>Instructions:</h2>
+
+        <div class="article">
+            <h4>Information</h4>
+            <ol>
+                <li>Navigate through each unit through the navigation bar by just clicking the unit that you would like to study. It is recommended that you study from Unit 1 to Unit 3 respectively.</li>
+                <br/>
+                <li>Quizzes are located at the end of a unit. Answer each quiz to test your knowledge, after hitting the "Submit" button, you will be shown your quiz results as well as the correct answers.</li>
+                <br/>
+                <li>Happy Coding!</li>
+                
+            </ol>
+
+        </div>
+        </div>
+
+</body>
+</html>
