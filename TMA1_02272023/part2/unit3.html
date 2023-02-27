@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 2 - A1</title>
+    <link rel="stylesheet" href="../homepage.css" />
+    <link rel="stylesheet" href="pageDesign.css" />
+    <style>
+        .mainHeader {
+            overflow: hidden;
+            background-color: #f1f1f1;
+            padding: 20px 10px;
+        }
+
+        .mainHeader a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px; 
+            line-height: 25px;
+            border-radius: 4px;
+        }
+
+        #aboutMe {
+            text-align: center;
+        }
+
+        .mainHeader a.logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .mainHeader a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .mainHeader a.active {
+            background-color: dodgerblue;
+            color: white;
+        }
+
+        .mainHeader-right {
+            float: right;
+        }
+
+        @media screen and (max-width: 500px) {
+            .mainHeader a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+            
+            .mainHeader-right {
+                float: none;
+            }
+        }
+
+        .question{
+            font-weight: 600;
+        }
+        .answers {
+            margin-bottom: 20px;
+        }
+        #submit{
+            font-family: sans-serif;
+            font-size: 17px;
+            background-color: darkblue;
+            color: #fff;
+            border: 0px;
+            border-radius: 3px;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        #submit:hover{
+            background-color: blue;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <div class="mainHeader">
+        <a href="index.html" class="logo">Amiel De Los Reyes' Page</a>
+        <div class="mainHeader-right">
+          <a href="../index.html">Home</a>
+          <a href="../Part1">Part 1</a>
+          <a class="active" href="#">Part 2</a>
+          <a href="../Part3">Part 3</a>
+          <a href="../Part4">Part 4</a>
+        </div>
+    </div>
+
+    
+    <div class="header">
+        <table>
+            <tr>
+            <td>
+            <img src="images/logo.png" alt="logo" height="80px" width="100px"/></td>
+            <td>
+            <h2>&nbsp;CodeTeacher - A Teaching Website to Learn HTML/CSS/JavaScript</h2></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- navigation bar -->
+    <div class="nav">
+        <ul class="horizontal">
+            <li>
+                <a href="index.html">Welcome Page</a>
+            </li>
+            <li>
+                <a href="unit1.html">Unit 1 (HTML/CSS)</a>
+            </li>
+            <li>
+                <a href="unit2.html">Unit 2 (JavaScript)</a>
+            </li>
+            <li>
+                <a class="active" href="unit3.html">Unit 3 (XML/AJAX)</a>
+            </li>
+          
+        </ul>
+    </div>
+
+
+    <div class="section">
+        <h2>Basic Fundamentals of XML and AJAX</h2>
+
+        <div class="article">
+            <p>XML is used for data transfer and data storage.</p>
+            <p>The term Ajax was coined by Jesse James Garrett of Adaptive Path in February 2005.</p>
+            <p>AJAX is used for asynchronous communication between the server and the client-side without reloading the whole page. It uses a combination of XMLHttpRequest object to request from the server and the server responds back with a JSON object.</p>
+        </div>
+    </div>
+
+    
+    <div class="section" id="me">
+        <h2>XML:</h2>
+
+        <div class="article">
+
+        <ul>            
+            <li>XML stands for eXtensive Markup Language. It is an open-source technology for data storage and exchange. It describes data in a way that humans can easily read and understand them and computers can process.</li>
+            <br />
+            <li>XML uses a Document Type Definition, which defines the structure and validates the elements and attributes of an XML document.</li>
+            <br />
+            <li>The correct syntax to define the XML version is: <<i>?xml version="1.0"?</i>>.</li>
+            <br />
+            <li>Every XML element must be properly closed. There will be errors when you don't close an element. White spaces are also preserved with XML.</li>
+            <br />
+            <li>XSL stands for eXtensive Stylesheet Language. It formats and transforms XML documents.</li>
+
+        </ul>
+        </div>
+    </div>
+
+    <div class="section" id="me">
+        <h2>AJAX:</h2>
+
+        <div class="article">
+
+        <ul>            
+            <li>AJAX stands for Asynchronous JavaScript and XML. It is a way to send and receive information from the server to the pages without reloading the whole page.</li>
+            <br />
+            <li>AJAX can create an XMLHttpRequest object to request data from the server, then the server sends back a JSON object to the client-side.</li>
+            <br />
+            <li>Raw Ajax uses JavaScript to send asynchronous requests to the server, then updates the page using DOM.</li>
+            <br />
+            <li>The main steps of using AJAX technology are: Create an instance of the XMLHttpRequest object, then handle the server's response as JSON object. Parse this JSON object using the syntax <i>JSON.parse()</i> and now you can work with the data received.</li>
+        </ul>
+        </div>
+    </div>
+
+    <!-- Code for the quiz -->
+    <div class="section" id="classes">
+        <h2>Take the quiz:</h2>
+
+        <div class="article">
+            <div id="quiz"></div>
+            <button id="submit">Get Results</button>
+            <div id="results"></div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript code for quiz. Reference code: https://codepen.io/yaphi1/pen/NpZvJp . This code helped me creating a simple JS quiz.-->
+    <script>
+        // Create a JSON object that contains the questions and the answers
+        var myQuestions = [
+            {
+                question: "What does XML stand for?",
+                answers: {
+                    a: 'eXtensive Markup Language',
+                    b: 'eXternal Materal Link',
+                    c: 'eXtraordinary Meta Logic',
+                    d: 'eXternal Meta Link'
+                },
+                correctAnswer: 'a'
+            },
+            {
+                question: "Which of the following is false?",
+                answers: {
+                    a: 'Every XML element does not need to be properly closed.',
+                    b: 'White spaces are preserved.',
+                    c: 'XSL formats outputs and transforms XML documents.',
+                    d: 'XML is open-source.'
+                },
+                correctAnswer: 'a'
+            },
+            {
+                question: "What does AJAX stand for?",
+                answers: {
+                    a: 'Asynchronous JSON and XSL',
+                    b: 'Asynchronous JavaScript and XML',
+                    c: 'Asynchronous Java and XSLT',
+                    d: 'Asynchronous JavaScript and XSL'
+                },
+                correctAnswer: 'b'
+            },
+            {
+                question: "What object is important when sending a request to the server?",
+                answers: {
+                    a: 'XMLHttpRequest object',
+                    b: 'XMLGetRequest object',
+                    c: 'XMLPostRequest object',
+                    d: 'XMLGrabRequest object'
+                },
+                correctAnswer: 'b'
+            },
+            {
+                question: "The term Ajax as coined by?",
+                answers: {
+                    a: 'James Naismith',
+                    b: 'Brandan Eich',
+                    c: 'Guido van Rossum',
+                    d: 'Jesse James Garrett'
+                },
+                correctAnswer: 'd'
+            }
+        ];
+
+        // Work variables
+        var quizContainer = document.getElementById('quiz');
+        var resultsContainer = document.getElementById('results');
+        var submitButton = document.getElementById('submit');
+
+        // Call the generateQuiz function
+        generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+        // generateQuiz function code
+        function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+            function showQuestions(questions, quizContainer){
+                // we'll need a place to store the output and the answer choices
+                var output = [];
+                var answers;
+
+                // iterate through every question, for each question.
+                for(var i = 0; i < questions.length; i++){
+                    
+                    // initialize list of answers
+                    answers = [];
+
+                    // grab the letter from the answers
+                    for(letter in questions[i].answers){
+
+                        // add answer choices as radio buttons
+                        answers.push(
+                            '<label>'
+                                + '<input type="radio" name="question'+ i + '" value="' + letter + '">'
+                                + letter + ': '
+                                + questions[i].answers[letter]
+                            + '</label><br/>'
+                        );
+                    }
+
+                    // add this question and its answers to the output
+                    output.push(
+                        '<div class="question">' + questions[i].question + '</div>'
+                        + '<div class="answers">' + answers.join('') + '</div>'
+                    );
+                }
+
+                // finally combine our output list into one string of html and put it on the page
+                quizContainer.innerHTML = output.join('');
+            }
+
+
+            function showResults(questions, quizContainer, resultsContainer){
+                
+                // gather answer containers from our quiz
+                var answerContainers = quizContainer.querySelectorAll('.answers');
+                
+                // keep track of user's answers
+                var userAnswer = '';
+                var numCorrect = 0;
+                
+                // for each question...
+                for(var i = 0; i < questions.length; i++){
+
+                    // find selected answer
+                    userAnswer = (answerContainers[i].querySelector('input[name=question' + i + ']:checked')||{}).value;
+                    
+                    // if answer is correct
+                    if(userAnswer === questions[i].correctAnswer){
+                        // add to the number of correct answers
+                        numCorrect++;
+                        
+                        // color the answers green
+                        answerContainers[i].style.color = 'green';
+                    }
+                    // if answer is wrong or blank
+                    else{
+                        // color the answers red
+                        answerContainers[i].style.color = 'red';
+                    }
+                }
+
+                // show number of correct answers out of total
+                resultsContainer.innerHTML = "<b>Your Result: " + numCorrect + ' out of ' + questions.length + " (" + ((numCorrect/questions.length) * 100) + "%)" + ". You can change your answer on your mistakes and keep trying until you get the correct answer!</b>";
+            }
+
+            // show questions right away
+            showQuestions(questions, quizContainer);
+            
+            // on submit, show results
+            submitButton.onclick = function(){
+                showResults(questions, quizContainer, resultsContainer);
+            }
+
+        }
+    </script>
+
+    
+    <div class="aside" id="like">
+        <h2>Instructions:</h2>
+
+        <div class="article">
+            <h4>Information</h4>
+            <ol>
+                <li>Navigate through each unit through the navigation bar by just clicking the unit that you would like to study. It is recommended that you study from Unit 1 to Unit 3 respectively.</li>
+                <br/>
+                <li>Quizzes are located at the end of a unit. Answer each quiz to test your knowledge, after hitting the "Submit" button, you will be shown your quiz results as well as the correct answers.</li>
+                <br/>
+                <li>Happy Coding!</li>
+                
+            </ol>
+
+        </div>
+        </div>
+
+</body>
+</html>
