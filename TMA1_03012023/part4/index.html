@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A1 Part 3</title>
+    <link rel="stylesheet" type="text/css" href="part4.css">
+    <link rel="stylesheet" href="../homepage.css" />
+
+    <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        li {
+          float: center;
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+          background-color: #111;
+        }
+        
+        .active {
+          background-color: #04AA6D;
+        }
+
+        #header2 {
+            background-color:darksalmon;
+            text-align: left;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 100;
+            margin:0;
+            padding-left: 5pt;
+            padding-right: 5pt;
+            padding-top:15pt;
+            padding-bottom: 15pt;
+            box-shadow: 0px 5px 5px 0px rgba(171,171,171,1);
+            width: 50%;
+        }
+
+        #header3 {
+            background-color:darkblue;
+            text-align: left;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 100;
+            margin:0;
+            padding-left: 5pt;
+            padding-right: 5pt;
+            padding-top:15pt;
+            padding-bottom: 15pt;
+            box-shadow: 0px 5px 5px 0px rgba(171,171,171,1);
+            width: 50%;
+        }
+
+        #header4 {
+            background-color:firebrick;
+            text-align: left;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 100;
+            margin:0;
+            padding-left: 5pt;
+            padding-right: 5pt;
+            padding-top:15pt;
+            padding-bottom: 15pt;
+            box-shadow: 0px 5px 5px 0px rgba(171,171,171,1);
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+  <div class="header">
+    <a href="index.html" class="logo">Amiel De Los Reyes' Page</a>
+    <div class="header-right">
+      <a href="../index.html">Home</a>
+      <a href="../Part1">Part 1</a>
+      <a href="../Part2">Part 2</a>
+      <a href="../Part3">Part 3</a>
+      <a class="active" href="#">Part 4</a>
+    </div>
+  </div>
+
+  <h1>A1 Part 4 - Utility Tools</h1>
+  <ul>
+    <li><a id="measure" style="cursor: pointer;">Measurement Converter</a></li>
+    <li><a id="mort" style="cursor: pointer;">Mortgage Calculator</a></li>
+    <li><a id="comp" style="cursor: pointer;">Compound Interest Calculator</a></li>
+  </ul>
+
+  <!-- References that guided me: 
+    https://codepen.io/mauricio5450/pen/zMGOdB
+    https://www.geeksforgeeks.org/how-to-create-a-weight-converter-with-html-and-javascript/
+    https://www.mymove.com/mortgage/mortgage-calculation/#:~:text=These%20factors%20include%20the%20total,)%5En%20%E2%80%93%201%5D.  
+  -->
+
+  <div id="measurement" hidden>
+    <!-- Length Converter Code -->
+    <h2 id="header2">Length Converter</h2>
+    <br />
+    <form name="lengthConversion">
+	
+		<p class="Value">From</p> 
+			<select name=fromUnit onChange="convertUnit()">
+        <option> meters
+        <option> kilometers
+        <option> miles
+        <option> feet 
+        <option> yards
+			</select>
+		
+    <br />
+		<p class="Options">To</p>
+		<p>
+			<select name=toUnit onChange="convertUnit()">
+        <option> meters
+        <option> kilometers
+        <option> miles
+        <option> feet
+        <option> yards
+			</select>
+    </p>
+    <br />
+	
+		<p colspan="4"><div id="formula">meters = 1 meters</div></p>
+
+		<p>Enter </p>
+		<p><input type="text" name="fromValue" value="1" size="5" maxlength="10"></p>
+		<p><input type=button value="Convert" onClick="convertUnit()"></p>
+    <br />
+		<p><span id="result"> 1</span></p>
+
+    <br />
+
+    <!-- Weight Converter code -->
+    <h2 id="header2">Weight Converter</h2>
+    <br />        
+    <p>Enter a value in the Kilograms field to convert :</p>
+    
+    <p>
+      <!-- label the input field -->
+      <label>Kilograms</label>
+
+      <input id="Kilograms" type="number" placeholder="kilograms"
+        oninput="kiloweightConvert(this.value)"
+        onchange="kiloweightConvert(this.value)" />
+    </p>
+    
+    <!-- output field-->
+    <p>Pounds: <span id="Pounds"></span></p>
+    <p>Ounces: <span id="Ounces"></span></p>
+    <p>Grams: <span id="Grams"></span></p>
+    <p>Stones: <span id="Stones"></span></p>
+
+    <br/>
+
+    <!-- Area Converter Code -->
+    <h2 id="header2">Area Converter</h2>
+    <br />        
+    <p>Enter a value in the Acre field to convert :</p>
+    
+    <p>
+      <!-- label the input field -->
+      <label>Acre</label>
+
+      <input id="acre" type="number" placeholder="acre"
+        oninput="areaConvert(this.value)"
+        onchange="areaConvert(this.value)" />
+    </p>
+    
+    <!-- output field-->
+    <p>Hectare: <span id="Hectare"></span></p>
+    <p>Square Foot: <span id="SquareFoot"></span></p>
+    <p>Square Inch: <span id="SquareInch"></span></p>
+    <p>Square KM: <span id="SquareKm"></span></p>
+    <p>Square Meter: <span id="SquareMeter"></span></p>
+    <p>Square Mile: <span id="SquareMile"></span></p>
+    <p>Square Yard: <span id="SquareYard"></span></p>
+
+    
+    <br />
+
+    <!-- Volume Converter Code -->
+    <h2 id="header2">Volume Converter</h2>
+    <br />        
+    <p>Enter a value in the Liter field to convert :</p>
+    
+    <p>
+      <!-- label the input field -->
+      <label>Liter</label>
+
+      <input id="liter" type="number" placeholder="liter"
+        oninput="volumeConvert(this.value)"
+        onchange="volumeConvert(this.value)" />
+    </p>
+    
+    <!-- output field-->
+    <p>Milliliter: <span id="Milliliter"></span></p>
+    <p>US Liquid Gallon: <span id="USLiquidGallon"></span></p>
+    <p>US Liquid Quart: <span id="USLiquidQuart"></span></p>
+    <p>US Liquid Pint: <span id="USLiquidPint"></span></p>
+    <p>Cubic Meter: <span id="CubicMeter"></span></p>
+    <p>Cubic Foot: <span id="CubicFoot"></span></p>
+    <p>Cubic Inch: <span id="CubicInch"></span></p>
+
+    
+    <br />
+
+  </div>
+
+<!-- Code for Mortgage Calculator  -->
+<div id="mortgage" hidden>
+  <h2 id="header3">Mortgage Calculator</h2>
+  <br />
+  <label for="loan">Total Amount of Your Loan ($): </label>
+  <input type="text" id="loan" name="loan">
+  <br />
+  <br />
+  <label for="interestRate">Your interest rate, as a monthly percentage (%): </label>
+  <input type="text" id="interestRate" name="interestRate">
+  <br />
+  <br />
+  <label for="numOfMonths">The total amount of months in your timeline for paying off your mortgage: </label>
+  <input type="text" id="numOfMonths" name="numOfMonths">
+  <br />
+  <br />
+  <button id="mortgateCalculatorButton" type="button" style="font-size: 16px;">Calculate</button>
+  <br />
+  <br />
+  <span id="mortgageResult"></span>
+
+  <br />
+</div>
+
+<!-- Code for Compound Interest Calculator -->
+<div id="compound" hidden>
+  <h2 id="header4">Compound Interest Calculator</h2>
+  <br />
+  <h4>This is a compound interest that helps a user calculate how much money they will have if they invest in a long-term stock that has a annual 10% return with their initial contribution.</h4>
+  <br />
+  <label for="capital">Your Capital, Initial Contribution ($): </label>
+  <input type="text" id="capital" name="capital">
+  <br />
+  <br />
+  <label for="numOfYears">Number of Years Until You Pull it Out: </label>
+  <input type="text" id="numOfYears" name="numOfYears">
+  <br />
+  <br />
+  <button id="compountInterestCalculatorButton" type="button" style="font-size: 16px;">Calculate</button>
+  <br />
+  <br />
+  <span id="compoundInterestResult"></span>
+</div>
+
+
+  <script src="jquery.js"></script>
+  <script src="part4.js"></script>
+</body>
+</html>

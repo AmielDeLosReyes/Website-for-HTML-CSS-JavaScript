@@ -1,0 +1,22 @@
+<resume>
+   <general>
+      <firstname>Amiel Xavier</firstname>
+      <lastname>De Los Reyes</lastname>
+      <age>23</age>
+      <email>amielpogi4@yahoo.com</email>
+      <description>Innovative Software Developer with hands-on experience designing and testing applications in Agile Software Development. 
+            Dedicated to developing creative solutions to meet business goals and requirements.</description>
+   </general>
+   <education>
+      <university>University of Regina</university>
+      <college>Briercrest College</college>
+   </education>
+   <work>
+      <company>Information Systems Developer - JIL Church Regina</company>
+      <date>December 2021 - Present</date>
+      <company>Software Developer - EVRAZ North America</company>
+      <date>January 2022 - May 2022</date>
+      <company>Hackathon Participant - Morgan Stanley</company>
+      <date>July 2021 - July 2021</date>
+   </work>
+</resume>
